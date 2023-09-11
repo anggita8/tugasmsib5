@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas 2 JS</title>
+</head>
+<body>
+    <script>
+    document.write("<h1>BIODATA</h1>")
+    var biodata = {
+    nama: "Ridwan",
+    jabatan: "Manager",
+    status: "Menikah",
+    };
+
+    var gajiPokok;
+    switch (biodata.jabatan) {
+    case "Manager": gajiPokok = 15000000; break;
+    case "Asisten Manager" : gajiPokok = 10000000; break;
+    case "Staff": gajiPokok = 5000000; break;
+    default: gajiPokok = 0; break;
+    }
+
+    var tunjanganJabatan = 0.15 * gajiPokok;
+    var bpjs = 0.10 * gajiPokok;
+    var tunjanganKeluarga = biodata.status === "Menikah" ? 0.20 * gajiPokok : 0;
+    var totalGaji = gajiPokok + tunjanganJabatan + bpjs + tunjanganKeluarga;
+
+    document.write("<br>Nama Pegawai: " + biodata.nama);
+    document.write("<br>Jabatan: " + biodata.jabatan);
+    document.write("<br>Status: " + biodata.status);
+    document.write("<br>Gaji Pokok: " + gajiPokok);
+    document.write("<br>Tunjangan Jabatan: " + tunjanganJabatan);
+    document.write("<br>BPJS: " + bpjs);
+    document.write("<br>Tunjangan Keluarga: " + tunjanganKeluarga);
+    document.write("<br>Total Gaji: " + totalGaji);
+
+    </script>
+</body>
+</html>
