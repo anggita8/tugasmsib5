@@ -1,0 +1,42 @@
+Script Tugas1 SQl Rizky Anggita :
+
+//Masuk ke mariaDB ke dalam CMD
+cd xampp\mysql\bin
+mysql -u root -p
+
+//Membuat database baru
+CREATE DATABASE dbpegawai;
+
+//Menampilkan database
+SHOW DATABASES;
+
+//Masuk database dbpegawai
+use dbpegawai;
+
+//Membuat table pegawai
+CREATE TABLE pegawai (
+    id INT PRIMARY KEY,
+    nip CHAR(5) NOT NULL UNIQUE,
+    nama VARCHAR(30) NOT NULL,
+    gender ENUM('L','P') NOT NULL,
+    umur INT NOT NULL,
+    berat_badan FLOAT
+);
+
+//Menampilkan table pegawai
+SHOW TABLES;
+
+//Menampilkan deskripsi tabel pegawai yang sudah dibuat
+DESC pegawai;
+
+//Menambahkan isi dalam table pegawai
+INSERT INTO pegawai (id, nip, nama, gender, umur, berat_badan)
+VALUES
+    (1, '11112', 'Rizky Anggita', 'P', 21, 60),
+    (2, '22223', 'Rayhana tuzzahra', 'P', 21, 60),
+    (3, '33334', 'Dimas Wijaya', 'L', 23, 70),
+    (4, '44445', 'Rifky Ramadhan', 'L', 17, 60),
+    (5, '55556', 'Floreta Natalie', 'P', 22, 55Ss);
+
+//Menampilkan isi dalam table
+select * FROM pegawai;
